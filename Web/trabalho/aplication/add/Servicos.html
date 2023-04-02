@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../functions/Servicos.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <h1>Adicionar novo serviço</h1>
+    <form method="post">
+
+        <div class="adicionar">
+            <label for="nome">Nome*:</label>
+            <input type="text" id="nome" name="nome" placeholder="Insira o Serviço" required=""/>
+        </div>
+    </form>
+    <div id="botao">
+        <button id="enviar" name="enviar" onclick="validarServicos();"><img src="../image/enviar.png">Enviar</button>
+
+        <button id="voltar" name="voltar" onClick="history.go(-1);"><img src="../image/voltar.png">Voltar</button>
+    </div>
+</body>
+</html>

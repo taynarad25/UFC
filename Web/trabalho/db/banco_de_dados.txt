@@ -1,0 +1,58 @@
+CREATE DATABASE DB_SERVICOS;
+
+USE DB_SERVICOS;
+
+CREATE TABLE Tipo (
+    Id_Tipo integer PRIMARY KEY auto_increment,
+    Nome varchar(255) not null
+);
+
+CREATE TABLE Servicos (
+    Id_Servicos integer PRIMARY KEY auto_increment,
+    Id_Tipo integer not null,
+    Nome varchar(255) not null
+);
+ALTER TABLE Servicos ADD CONSTRAINT Fk_TipoServico FOREIGN KEY ( Id_Tipo ) REFERENCES Tipo ( Id_Tipo );
+
+CREATE TABLE Informacoes (
+    Id_Informacoes integer PRIMARY KEY auto_increment,
+    Id_Servicos integer not null,
+    Nome varchar(255) not null,
+    Horario varchar(255) default null,
+    Endereco varchar(500) default null,
+    Telefone varchar (14) default null,
+    Instagram varchar(255) default null,
+    Whatsapp varchar(14) default null
+);
+ALTER TABLE Informacoes ADD CONSTRAINT Fk_ServicoInfo FOREIGN KEY ( Id_Servicos ) REFERENCES Servicos ( Id_Servicos );
+
+INSERT INTO TIPO(Nome) VALUE ("Estabelecimentos");
+INSERT INTO TIPO(Nome) VALUE ("Serviços Gerais");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Clínica Médica");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Clínica Odontológica");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Clínica Estética");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Bancos");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Bares");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Correios");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Churrascaria");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Papelarias");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Lanchonete");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Marmitarias");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Mercadinhos");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Óticas");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Padarias");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Pizzaria");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Centros Religiosos");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Restaurantes");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Supermercados");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (1, "Farmácias");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (2, "Serviços de Limpeza");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (2, "Dedetização");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (2, "Manutenção de Eletrônicos");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (2, "Manutenção de Eletrodomésticos");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (2, "Salão de Beleza");
+INSERT INTO Servicos(Id_Tipo, Nome) VALUE (2, "Barbearia");
+
+select * from  Tipo;
+select * from  Servicos;
+select * from  Informacoes;
